@@ -1,4 +1,4 @@
-package org.example.interfaces;
+package org.example.utils.interfaces;
 
 public interface MyList<T> extends Iterable<T> {
     void printArr();
