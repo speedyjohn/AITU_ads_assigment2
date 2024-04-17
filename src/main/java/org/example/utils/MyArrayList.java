@@ -1,7 +1,8 @@
 package org.example.utils;
 
+import org.example.utils.exceptions.ArrayEmptyException;
+import org.example.utils.exceptions.ArrayIndexOutOfBoundsException;
 import org.example.utils.interfaces.MyList;
-
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -13,15 +14,15 @@ public class MyArrayList<T> implements MyList<T> {
         size = 0;
     }
 
-    private void checkIndex(int index){
+    private void checkIndex(int index) {
         if(index < 0 || index >= size){
-            throw new ArrayIndexOutOfBoundsException("Incorrect index.");
+            throw new ArrayIndexOutOfBoundsException("Incorrect index: " + index + ".");
         }
     }
 
     private void checkEmpty() {
         if (size == 0) {
-            throw new NoSuchElementException("ArrayList is empty.");
+            throw new ArrayEmptyException("ArrayList is empty.");
         }
     }
 
@@ -35,6 +36,10 @@ public class MyArrayList<T> implements MyList<T> {
 
     @Override
     public void printArr(){
+        if(size == 0) {
+            System.out.println("ArrayList is empty.");
+            return;
+        }
         for (int i = 0; i < size; i++) {
             System.out.print(arr[i] + " ");
         }
@@ -78,6 +83,7 @@ public class MyArrayList<T> implements MyList<T> {
         }
         arr[0] = item;
         size++;
+        return;
     }
 
     @Override
@@ -86,16 +92,17 @@ public class MyArrayList<T> implements MyList<T> {
             increaseBuffer();
         }
         arr[size++] = item;
+        return;
     }
 
     @Override
     public void remove(int index) {
-        checkEmpty();
         checkIndex(index);
         for (int i = index + 1; i < size; i++) {
             arr[i-1] = arr[i];
         }
         size--;
+        return;
     }
 
     @Override
@@ -105,6 +112,7 @@ public class MyArrayList<T> implements MyList<T> {
             arr[i-1] = arr[i];
         }
         size--;
+        return;
     }
 
     @Override
@@ -116,6 +124,7 @@ public class MyArrayList<T> implements MyList<T> {
             newArr[i] = arr[i];
         }
         arr = newArr;
+        return;
     }
 
     @Override
@@ -143,36 +152,66 @@ public class MyArrayList<T> implements MyList<T> {
 
     @Override
     public int indexOf(Object object) {
-        return 0;
+        for (int i = 0; i < size; i++) {
+            if(arr[i] == object) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
     public int lastIndexOf(Object object) {
-        return 0;
+        int lastIndex = -1;
+        for (int i = 0; i < size; i++) {
+            if(arr[i] == object) {
+                lastIndex = i;
+            }
+        }
+        return lastIndex;
     }
 
     @Override
     public boolean exists(Object object) {
+        for (int i = 0; i < size; i++) {
+            if(arr[i] == object) {
+                return true;
+            }
+        }
         return false;
     }
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+        return arr;
     }
 
     @Override
     public void clear() {
-
+        arr = (T[]) new Object[5];
     }
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override
     public Iterator<T> iterator() {
-        return null;
+        return new Iterator<T>() {
+            private int currentIndex = 0;
+            @Override
+            public boolean hasNext() {
+                return currentIndex < size;
+            }
+
+            @Override
+            public T next() {
+                if(!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                return (T) arr[currentIndex++];
+            }
+        };
     }
 }

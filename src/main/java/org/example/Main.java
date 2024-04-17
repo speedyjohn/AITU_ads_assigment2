@@ -2,6 +2,8 @@ package org.example;
 
 import org.example.utils.MyArrayList;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         MyArrayList<Object> myArrayList = new MyArrayList<>();
@@ -38,6 +40,10 @@ public class Main {
         System.out.println(myArrayList.getFirst());
         System.out.println(myArrayList.getLast());
 
-
+        ArrayList<Integer> arrlist = new ArrayList<Integer>();
+        arrlist.add(1);
+        arrlist.add(1);
+        arrlist.add(1);
+        System.out.println(arrlist.indexOf(2));
     }
 }
