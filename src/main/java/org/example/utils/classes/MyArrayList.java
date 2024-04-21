@@ -1,4 +1,4 @@
-package org.example.utils;
+package org.example.utils.classes;
 
 import org.example.utils.exceptions.ArrayEmptyException;
 import org.example.utils.exceptions.ArrayIndexOutOfBoundsException;
@@ -68,12 +68,6 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     @Override
-    public void set(int index, T item) {
-        checkIndex(index);
-        arr[index] = item;
-    }
-
-    @Override
     public void addFirst(T item) {
         if(size>=arr.length) {
             increaseBuffer();
@@ -93,6 +87,12 @@ public class MyArrayList<T> implements MyList<T> {
         }
         arr[size++] = item;
         return;
+    }
+
+    @Override
+    public void set(int index, T item) {
+        checkIndex(index);
+        arr[index] = item;
     }
 
     @Override
