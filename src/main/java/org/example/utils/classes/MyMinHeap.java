@@ -1,4 +1,4 @@
 package org.example.utils.classes;
 
-public class MyHeap {
+public class MyMinHeap {
 }

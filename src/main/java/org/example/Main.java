@@ -3,6 +3,7 @@ package org.example;
 import org.example.utils.classes.MyArrayList;
 import org.example.utils.classes.MyLinkedList;
 import org.example.utils.classes.MyQueue;
+import org.example.utils.classes.MyStack;
 
 public class Main {
     public static void main(String[] args) {
@@ -79,28 +80,52 @@ public class Main {
 //        myLinkedList.clear();
 //        System.out.println(myLinkedList.size());
 
-        MyQueue<Object> myQueue = new MyQueue<>();
-        myQueue.enqueue(1);
-        myQueue.enqueue(2);
-        myQueue.enqueue(3);
-        myQueue.enqueue(4);
-        myQueue.enqueue(5);
-        myQueue.printArr();
-        System.out.println(myQueue.dequeue());
-        System.out.println(myQueue.dequeue());
-        myQueue.printArr();
-        System.out.println(myQueue.peek());
-        myQueue.printArr();
-        System.out.println(myQueue.size());
-        System.out.println(myQueue.isEmpty());
-        Object[] myQueueArr = myQueue.toArray();
-        for (Object item: myQueueArr) {
+//        MyQueue<Object> myQueue = new MyQueue<>();
+//        myQueue.enqueue(1);
+//        myQueue.enqueue(2);
+//        myQueue.enqueue(3);
+//        myQueue.enqueue(4);
+//        myQueue.enqueue(5);
+//        myQueue.printArr();
+//        System.out.println(myQueue.dequeue());
+//        System.out.println(myQueue.dequeue());
+//        myQueue.printArr();
+//        System.out.println(myQueue.peek());
+//        myQueue.printArr();
+//        System.out.println(myQueue.size());
+//        System.out.println(myQueue.isEmpty());
+//        Object[] myQueueArr = myQueue.toArray();
+//        for (Object item: myQueueArr) {
+//            System.out.print(item + " ");
+//        }
+//        System.out.println();
+//        System.out.println(myQueue.exists(123));
+//        myQueue.clear();
+//        System.out.println(myQueue.size());
+
+        MyStack<Object> myStack = new MyStack<>();
+        myStack.push(1);
+        myStack.push(2);
+        myStack.push(3);
+        myStack.push(4);
+        myStack.push(5);
+        myStack.printArr();
+        System.out.println(myStack.pop());
+        System.out.println(myStack.pop());
+        myStack.printArr();
+        System.out.println(myStack.peek());
+        myStack.printArr();
+        System.out.println(myStack.size());
+        System.out.println(myStack.isEmpty());
+        Object[] myStackArr = myStack.toArray();
+        for (Object item: myStackArr) {
             System.out.print(item + " ");
         }
         System.out.println();
-        System.out.println(myQueue.exists(123));
-        myQueue.clear();
-        System.out.println(myQueue.size());
+        System.out.println(myStack.exists(123));
+        myStack.clear();
+        System.out.println(myStack.size());
+
 
 
     }

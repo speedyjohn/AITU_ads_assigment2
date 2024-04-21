@@ -8,9 +8,11 @@ import java.util.Iterator;
 public class MyQueue<T> implements MyQueueInterface<T> {
 
     private MyLinkedList<T> myLinkedList;
+    private int size;
 
     public MyQueue() {
         myLinkedList = new MyLinkedList<T>();
+        size = 0;
     }
 
     private void checkEmpty() {
@@ -25,6 +27,7 @@ public class MyQueue<T> implements MyQueueInterface<T> {
     @Override
     public void enqueue(T item) {
         myLinkedList.add(item);
+        size++;
     }
 
     @Override
@@ -32,6 +35,7 @@ public class MyQueue<T> implements MyQueueInterface<T> {
         checkEmpty();
         T first = myLinkedList.getFirst();
         myLinkedList.removeFirst();
+        size--;
         return first;
     }
 
@@ -43,17 +47,18 @@ public class MyQueue<T> implements MyQueueInterface<T> {
 
     @Override
     public int size() {
-        return myLinkedList.size();
+        return size;
     }
 
     @Override
     public boolean isEmpty() {
-        return myLinkedList.size() == 0;
+        return size == 0;
     }
 
     @Override
     public void clear() {
         myLinkedList = new MyLinkedList<T>();
+        size = 0;
     }
 
     @Override
