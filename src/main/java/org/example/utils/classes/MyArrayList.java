@@ -2,11 +2,11 @@ package org.example.utils.classes;
 
 import org.example.utils.exceptions.ArrayEmptyException;
 import org.example.utils.exceptions.ArrayIndexOutOfBoundsException;
-import org.example.utils.interfaces.MyList;
+import org.example.utils.interfaces.MyListInterface;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class MyArrayList<T> implements MyList<T> {
+public class MyArrayList<T> implements MyListInterface<T> {
     private int size;
     private T[] arr = (T[]) new Object[5];
 

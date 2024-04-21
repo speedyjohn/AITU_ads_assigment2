@@ -1,6 +1,6 @@
 package org.example.utils.interfaces;
 
-public interface MyList<T> extends Iterable<T> {
+public interface MyListInterface<T> extends Iterable<T> {
     void printArr();
     void add(T item);
 

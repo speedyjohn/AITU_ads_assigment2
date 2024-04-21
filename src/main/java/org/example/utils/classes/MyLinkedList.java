@@ -3,11 +3,11 @@ package org.example.utils.classes;
 import org.example.utils.exceptions.ArrayEmptyException;
 import org.example.utils.exceptions.ArrayIndexOutOfBoundsException;
 import org.example.utils.exceptions.NoSuchElementException;
-import org.example.utils.interfaces.MyList;
+import org.example.utils.interfaces.MyListInterface;
 
 import java.util.Iterator;
 
-public class MyLinkedList<T> implements MyList<T> {
+public class MyLinkedList<T> implements MyListInterface<T> {
     private MyNode<T> head;
     private MyNode<T> tail;
     private int size;

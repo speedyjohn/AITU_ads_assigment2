@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.utils.classes.MyArrayList;
 import org.example.utils.classes.MyLinkedList;
+import org.example.utils.classes.MyQueue;
 
 public class Main {
     public static void main(String[] args) {
@@ -46,36 +47,61 @@ public class Main {
 //            System.out.println(num);
 //        }
 
-        MyLinkedList<Object> myLinkedList = new MyLinkedList<>();
-        myLinkedList.add(1);
-        myLinkedList.add(2);
-        myLinkedList.add(3);
-        myLinkedList.add(4);
-        myLinkedList.add(5);
-        myLinkedList.add(2, 101);
-        myLinkedList.printArr();
-        myLinkedList.addFirst(111);
-        myLinkedList.addLast(999);
-        myLinkedList.printArr();
-        myLinkedList.set(0, 1111);
-        myLinkedList.printArr();
-        myLinkedList.removeFirst();
-        myLinkedList.removeLast();
-        myLinkedList.remove(2);
-        myLinkedList.printArr();
-        // Place for sort checking
-        System.out.println(myLinkedList.get(1));
-        System.out.println(myLinkedList.getFirst());
-        System.out.println(myLinkedList.getLast());
-        System.out.println(myLinkedList.indexOf(3));
-        System.out.println(myLinkedList.lastIndexOf(3));
-        System.out.println(myLinkedList.exists(3333));
-        Object[] arr = myLinkedList.toArray();
-        for (Object item: arr) {
+//        MyLinkedList<Object> myLinkedList = new MyLinkedList<>();
+//        myLinkedList.add(1);
+//        myLinkedList.add(2);
+//        myLinkedList.add(3);
+//        myLinkedList.add(4);
+//        myLinkedList.add(5);
+//        myLinkedList.add(2, 101);
+//        myLinkedList.printArr();
+//        myLinkedList.addFirst(111);
+//        myLinkedList.addLast(999);
+//        myLinkedList.printArr();
+//        myLinkedList.set(0, 1111);
+//        myLinkedList.printArr();
+//        myLinkedList.removeFirst();
+//        myLinkedList.removeLast();
+//        myLinkedList.remove(2);
+//        myLinkedList.printArr();
+//        // Place for sort checking
+//        System.out.println(myLinkedList.get(1));
+//        System.out.println(myLinkedList.getFirst());
+//        System.out.println(myLinkedList.getLast());
+//        System.out.println(myLinkedList.indexOf(3));
+//        System.out.println(myLinkedList.lastIndexOf(3));
+//        System.out.println(myLinkedList.exists(3333));
+//        Object[] arr = myLinkedList.toArray();
+//        for (Object item: arr) {
+//            System.out.print(item + " ");
+//        }
+//        System.out.println(myLinkedList.size());
+//        myLinkedList.clear();
+//        System.out.println(myLinkedList.size());
+
+        MyQueue<Object> myQueue = new MyQueue<>();
+        myQueue.enqueue(1);
+        myQueue.enqueue(2);
+        myQueue.enqueue(3);
+        myQueue.enqueue(4);
+        myQueue.enqueue(5);
+        myQueue.printArr();
+        System.out.println(myQueue.dequeue());
+        System.out.println(myQueue.dequeue());
+        myQueue.printArr();
+        System.out.println(myQueue.peek());
+        myQueue.printArr();
+        System.out.println(myQueue.size());
+        System.out.println(myQueue.isEmpty());
+        Object[] myQueueArr = myQueue.toArray();
+        for (Object item: myQueueArr) {
             System.out.print(item + " ");
         }
-        System.out.println(myLinkedList.size());
-        myLinkedList.clear();
-        System.out.println(myLinkedList.size());
+        System.out.println();
+        System.out.println(myQueue.exists(123));
+        myQueue.clear();
+        System.out.println(myQueue.size());
+
+
     }
 }
