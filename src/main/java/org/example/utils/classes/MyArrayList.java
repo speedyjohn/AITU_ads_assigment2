@@ -8,10 +8,14 @@ import java.util.NoSuchElementException;
 
 public class MyArrayList<T> implements MyListInterface<T> {
     private int size;
-    private T[] arr = (T[]) new Object[5];
+    private T[] arr = (T[]) new Object[7];
 
     public MyArrayList() {
         size = 0;
+    }
+
+    public MyArrayList(int size) {
+        this.size = size;
     }
 
     private void checkIndex(int index) {
@@ -26,8 +30,8 @@ public class MyArrayList<T> implements MyListInterface<T> {
         }
     }
 
-    private void increaseBuffer() {
-        T[] newArr = (T[]) new Object[arr.length*2];
+    protected void increaseBuffer() {
+        T[] newArr = (T[]) new Object[arr.length*2 + 1];
         for(int i = 0; i < arr.length; i++) {
             newArr[i] = arr[i];
         }

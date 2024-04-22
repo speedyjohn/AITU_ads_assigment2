@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.utils.classes.MyArrayList;
-import org.example.utils.classes.MyLinkedList;
-import org.example.utils.classes.MyQueue;
-import org.example.utils.classes.MyStack;
+import org.example.utils.classes.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -103,30 +100,50 @@ public class Main {
 //        myQueue.clear();
 //        System.out.println(myQueue.size());
 
-        MyStack<Object> myStack = new MyStack<>();
-        myStack.push(1);
-        myStack.push(2);
-        myStack.push(3);
-        myStack.push(4);
-        myStack.push(5);
-        myStack.printArr();
-        System.out.println(myStack.pop());
-        System.out.println(myStack.pop());
-        myStack.printArr();
-        System.out.println(myStack.peek());
-        myStack.printArr();
-        System.out.println(myStack.size());
-        System.out.println(myStack.isEmpty());
-        Object[] myStackArr = myStack.toArray();
-        for (Object item: myStackArr) {
+//        MyStack<Object> myStack = new MyStack<>();
+//        myStack.push(1);
+//        myStack.push(2);
+//        myStack.push(3);
+//        myStack.push(4);
+//        myStack.push(5);
+//        myStack.printArr();
+//        System.out.println(myStack.pop());
+//        System.out.println(myStack.pop());
+//        myStack.printArr();
+//        System.out.println(myStack.peek());
+//        myStack.printArr();
+//        System.out.println(myStack.size());
+//        System.out.println(myStack.isEmpty());
+//        Object[] myStackArr = myStack.toArray();
+//        for (Object item: myStackArr) {
+//            System.out.print(item + " ");
+//        }
+//        System.out.println();
+//        System.out.println(myStack.exists(123));
+//        myStack.clear();
+//        System.out.println(myStack.size());
+
+        MyMinHeap<Integer> myMinHeap = new MyMinHeap<>();
+        myMinHeap.insert(1);
+        myMinHeap.insert(2);
+        myMinHeap.insert(3);
+        myMinHeap.insert(4);
+        myMinHeap.insert(5);
+        myMinHeap.insert(6);
+        myMinHeap.insert(7);
+        myMinHeap.printHeap();
+        myMinHeap.printArr();
+        System.out.println(myMinHeap.getSmallest());
+        myMinHeap.removeSmallest();
+        myMinHeap.printHeap();
+        myMinHeap.printArr();
+        Object[] myHeapArray = myMinHeap.toArray();
+        for (Object item: myHeapArray) {
             System.out.print(item + " ");
         }
+        myMinHeap.clear();
         System.out.println();
-        System.out.println(myStack.exists(123));
-        myStack.clear();
-        System.out.println(myStack.size());
-
-
+        myMinHeap.printArr();
 
     }
 }
