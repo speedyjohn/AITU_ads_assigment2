@@ -381,28 +381,5 @@ public class Main {
                 throw new RuntimeException(e);
             }
         }
-        MyArrayListStack<Object> myStack = new MyArrayListStack<>();
-        myStack.push(1);
-        myStack.push(2);
-        myStack.push(3);
-        myStack.push(4);
-        myStack.push(5);
-        myStack.printArr();
-        System.out.println(myStack.pop());
-        System.out.println(myStack.pop());
-        myStack.printArr();
-        System.out.println(myStack.peek());
-        myStack.printArr();
-        System.out.println(myStack.size());
-        System.out.println(myStack.isEmpty());
-        Object[] myStackArr = myStack.toArray();
-        for (Object item: myStackArr) {
-            System.out.print(item + " ");
-        }
-        System.out.println();
-        System.out.println(myStack.exists(123));
-        myStack.clear();
-        System.out.println(myStack.size());
-
     }
 }
