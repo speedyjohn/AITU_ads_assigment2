@@ -47,7 +47,9 @@ public class MyArrayList<T> implements MyListInterface<T> {
             return;
         }
         for (int i = 0; i < size; i++) {
-            System.out.print(arr[i] + " ");
+            if(arr[i] != null) {
+                System.out.print(arr[i] + " ");
+            }
         }
         System.out.println();
     }
@@ -218,7 +220,11 @@ public class MyArrayList<T> implements MyListInterface<T> {
 
     @Override
     public Object[] toArray() {
-        return arr;
+        T[] newArr = (T[]) new Object[size];
+        for (int i = 0; i < size; i++) {
+            newArr[i] = arr[i];
+        }
+        return newArr;
     }
 
     @Override

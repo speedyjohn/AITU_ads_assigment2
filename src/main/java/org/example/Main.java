@@ -1,47 +1,49 @@
 package org.example;
 
 import org.example.utils.classes.arrayList.MyArrayList;
+import org.example.utils.classes.arrayList.MyArrayListQueue;
+import org.example.utils.classes.arrayList.MyArrayListStack;
 import org.example.utils.classes.linkedList.MyLinkedList;
 
 public class Main {
     public static void main(String[] args) {
-        MyArrayList<Object> myArrayList = new MyArrayList<>();
-        myArrayList.add(1);
-        myArrayList.add(2);
-        myArrayList.add(3);
-        myArrayList.add(4);
-        myArrayList.add(5);
-        myArrayList.printArr();
-        System.out.println();
-        myArrayList.add(3, 123);
-        myArrayList.printArr();
-        System.out.println();
-        myArrayList.set(5, 555);
-        myArrayList.printArr();
-        System.out.println();
-        myArrayList.addFirst(111);
-        myArrayList.printArr();
-        System.out.println();
-        myArrayList.addLast(666);
-        myArrayList.printArr();
-        System.out.println();
-        myArrayList.remove(4);
-        myArrayList.printArr();
-        System.out.println();
-        myArrayList.removeFirst();
-        myArrayList.printArr();
-        System.out.println();
-        myArrayList.removeLast();
-        System.out.println();
-        myArrayList.add(32);
-        myArrayList.add(45);
-        myArrayList.add(15);
-        myArrayList.add(15);
-        myArrayList.add(5);
-        myArrayList.add(5);
-        myArrayList.add(7);
-        myArrayList.sort();
-        myArrayList.printArr();
+//        MyArrayList<Object> myArrayList = new MyArrayList<>();
+//        myArrayList.add(1);
+//        myArrayList.add(2);
+//        myArrayList.add(3);
+//        myArrayList.add(4);
+//        myArrayList.add(5);
+//        myArrayList.printArr();
+//        System.out.println();
+//        myArrayList.add(3, 123);
+//        myArrayList.printArr();
+//        System.out.println();
+//        myArrayList.set(5, 555);
+//        myArrayList.printArr();
+//        System.out.println();
+//        myArrayList.addFirst(111);
+//        myArrayList.printArr();
+//        System.out.println();
+//        myArrayList.addLast(666);
+//        myArrayList.printArr();
+//        System.out.println();
+//        myArrayList.remove(4);
+//        myArrayList.printArr();
+//        System.out.println();
+//        myArrayList.removeFirst();
+//        myArrayList.printArr();
+//        System.out.println();
+//        myArrayList.removeLast();
+//        System.out.println();
+//        myArrayList.add(32);
+//        myArrayList.add(45);
+//        myArrayList.add(15);
+//        myArrayList.add(15);
+//        myArrayList.add(5);
+//        myArrayList.add(5);
+//        myArrayList.add(7);
+//        myArrayList.sort();
+//        myArrayList.printArr();
 //        System.out.println(myArrayList.get(3));
 //        System.out.println(myArrayList.getFirst());
 //        System.out.println(myArrayList.getLast());
@@ -54,12 +56,12 @@ public class Main {
 //            System.out.println(num);
 //        }
 
-        MyLinkedList<Object> myLinkedList = new MyLinkedList<>();
-        myLinkedList.add(123);
-        myLinkedList.add(23);
-        myLinkedList.add(3);
-        myLinkedList.add(43);
-        myLinkedList.add(41);
+//        MyLinkedList<Object> myLinkedList = new MyLinkedList<>();
+//        myLinkedList.add(123);
+//        myLinkedList.add(23);
+//        myLinkedList.add(3);
+//        myLinkedList.add(43);
+//        myLinkedList.add(41);
 //        myLinkedList.add(2, 101);
 //        myLinkedList.printArr();
 //        myLinkedList.addFirst(111);
@@ -85,8 +87,8 @@ public class Main {
 //        System.out.println(myLinkedList.size());
 //        myLinkedList.clear();
 //        System.out.println(myLinkedList.size());
-        myLinkedList.sort();
-        myLinkedList.printArr();
+//        myLinkedList.sort();
+//        myLinkedList.printArr();
 
 //        MyQueue<Object> myQueue = new MyQueue<>();
 //        myQueue.enqueue(1);
@@ -111,7 +113,53 @@ public class Main {
 //        myQueue.clear();
 //        System.out.println(myQueue.size());
 
+//        MyArrayListQueue<Object> myQueue = new MyArrayListQueue<>();
+//        myQueue.enqueue(1);
+//        myQueue.enqueue(2);
+//        myQueue.enqueue(3);
+//        myQueue.enqueue(4);
+//        myQueue.enqueue(5);
+//        myQueue.printArr();
+//        System.out.println(myQueue.dequeue());
+//        System.out.println(myQueue.dequeue());
+//        myQueue.printArr();
+//        System.out.println(myQueue.peek());
+//        myQueue.printArr();
+//        System.out.println(myQueue.size());
+//        System.out.println(myQueue.isEmpty());
+//        Object[] myQueueArr = myQueue.toArray();
+//        for (Object item: myQueueArr) {
+//            System.out.print(item + " ");
+//        }
+//        System.out.println();
+//        System.out.println(myQueue.exists(123));
+//        myQueue.clear();
+//        System.out.println(myQueue.size());
+
 //        MyStack<Object> myStack = new MyStack<>();
+//        myStack.push(1);
+//        myStack.push(2);
+//        myStack.push(3);
+//        myStack.push(4);
+//        myStack.push(5);
+//        myStack.printArr();
+//        System.out.println(myStack.pop());
+//        System.out.println(myStack.pop());
+//        myStack.printArr();
+//        System.out.println(myStack.peek());
+//        myStack.printArr();
+//        System.out.println(myStack.size());
+//        System.out.println(myStack.isEmpty());
+//        Object[] myStackArr = myStack.toArray();
+//        for (Object item: myStackArr) {
+//            System.out.print(item + " ");
+//        }
+//        System.out.println();
+//        System.out.println(myStack.exists(123));
+//        myStack.clear();
+//        System.out.println(myStack.size());
+
+//        MyArrayListStack<Object> myStack = new MyArrayListStack<>();
 //        myStack.push(1);
 //        myStack.push(2);
 //        myStack.push(3);
