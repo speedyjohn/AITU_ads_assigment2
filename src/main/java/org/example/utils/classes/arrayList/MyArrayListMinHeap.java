@@ -14,6 +14,12 @@ public class MyArrayListMinHeap<T extends Comparable<T>> implements MyMinHeapInt
         index = 0;
     }
 
+    public MyArrayListMinHeap(int size) {
+        heap = new MyArrayList<>(size);
+        this.size = size;
+        index = 0;
+    }
+
     private void checkEmpty() {
         if (index == 0) {
             throw new ArrayEmptyException("ArrayList is empty.");
@@ -26,12 +32,6 @@ public class MyArrayListMinHeap<T extends Comparable<T>> implements MyMinHeapInt
         }
     }
 
-    public MyArrayListMinHeap(int size) {
-        heap = new MyArrayList<>(size);
-        this.size = size;
-        index = 0;
-    }
-
     private int parent(int index) {
         return (index - 1) / 2;
     }
@@ -42,10 +42,6 @@ public class MyArrayListMinHeap<T extends Comparable<T>> implements MyMinHeapInt
 
     private int rightChild(int index) {
         return (index * 2) + 2;
-    }
-
-    private boolean isLeaf(int index) {
-        return leftChild(index) >= index || rightChild(index) >= index;
     }
 
     private void swap(int x, int y) {
@@ -90,7 +86,6 @@ public class MyArrayListMinHeap<T extends Comparable<T>> implements MyMinHeapInt
     public void removeSmallest() {
         checkEmpty();
         checkSize();
-        T popped = heap.get(0);
         heap.set(0, heap.get(index - 1));
         index--;
         if (index > 0) {
@@ -105,12 +100,12 @@ public class MyArrayListMinHeap<T extends Comparable<T>> implements MyMinHeapInt
 
     @Override
     public T getSmallest() {
-        return heap.get(0);
+        return heap.getFirst();
     }
 
     @Override
     public void clear() {
-        heap = new MyArrayList<>();
+        heap.clear();
     }
 
     @Override
@@ -134,7 +129,6 @@ public class MyArrayListMinHeap<T extends Comparable<T>> implements MyMinHeapInt
     @Override
     public void printHeap() {
         int height = (int) Math.ceil(Math.log(index + 1) / Math.log(2));
-        int maxLevelNumber = (int) Math.pow(2, height - 1);
         int spaceBetweenItems = (int) Math.pow(2, height) - 1;
         int printedNodes = 0;
         int nodeIndex = 0;

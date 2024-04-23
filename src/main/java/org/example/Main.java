@@ -4,6 +4,7 @@ import org.example.utils.classes.arrayList.MyArrayList;
 import org.example.utils.classes.arrayList.MyArrayListQueue;
 import org.example.utils.classes.arrayList.MyArrayListStack;
 import org.example.utils.classes.linkedList.MyLinkedList;
+import org.example.utils.classes.linkedList.MyLinkedListMinHeap;
 
 public class Main {
     public static void main(String[] args) {
@@ -182,26 +183,26 @@ public class Main {
 //        myStack.clear();
 //        System.out.println(myStack.size());
 
-//        MyMinHeap<Integer> myMinHeap = new MyMinHeap<>();
-//        myMinHeap.insert(1);
-//        myMinHeap.insert(2);
-//        myMinHeap.insert(3);
-//        myMinHeap.insert(4);
-//        myMinHeap.insert(5);
-//        myMinHeap.insert(6);
-//        myMinHeap.insert(7);
-//        myMinHeap.printHeap();
-//        myMinHeap.printArr();
-//        System.out.println(myMinHeap.getSmallest());
-//        myMinHeap.removeSmallest();
-//        myMinHeap.printHeap();
-//        myMinHeap.printArr();
-//        Object[] myHeapArray = myMinHeap.toArray();
-//        for (Object item: myHeapArray) {
-//            System.out.print(item + " ");
-//        }
-//        myMinHeap.clear();
-//        System.out.println();
-//        myMinHeap.printArr();
+        MyLinkedListMinHeap<Integer> myMinHeap = new MyLinkedListMinHeap<>();
+        myMinHeap.insert(1);
+        myMinHeap.insert(2);
+        myMinHeap.insert(3);
+        myMinHeap.insert(4);
+        myMinHeap.insert(5);
+        myMinHeap.insert(6);
+        myMinHeap.insert(7);
+        myMinHeap.printHeap();
+        myMinHeap.printArr();
+        System.out.println(myMinHeap.getSmallest());
+        myMinHeap.removeSmallest();
+        myMinHeap.printHeap();
+        myMinHeap.printArr();
+        Object[] myHeapArray = myMinHeap.toArray();
+        for (Object item: myHeapArray) {
+            System.out.print(item + " ");
+        }
+        myMinHeap.clear();
+        System.out.println();
+        myMinHeap.printArr();
     }
 }

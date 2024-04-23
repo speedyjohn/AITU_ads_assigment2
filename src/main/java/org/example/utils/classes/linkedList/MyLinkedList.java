@@ -19,6 +19,12 @@ public class MyLinkedList<T> implements MyListInterface<T> {
         tail = null;
     }
 
+    public MyLinkedList(int size) {
+        this.size = size;
+        head = null;
+        tail = null;
+    }
+
     private void checkIndex(int index) {
         if(index < 0 || index >= size){
             throw new ArrayIndexOutOfBoundsException("Incorrect index: " + index + ".");
@@ -72,7 +78,7 @@ public class MyLinkedList<T> implements MyListInterface<T> {
     public void add(int index, T item) {
         checkIndex(index);
         if(index == 0) {
-            addFirst(item);
+            addLast(item);
         } else if(index == size) {
             addLast(item);
         } else {
