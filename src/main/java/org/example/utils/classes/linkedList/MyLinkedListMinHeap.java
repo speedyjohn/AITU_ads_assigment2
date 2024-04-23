@@ -4,6 +4,8 @@ import org.example.utils.classes.arrayList.MyArrayList;
 import org.example.utils.exceptions.ArrayEmptyException;
 import org.example.utils.interfaces.MyMinHeapInterface;
 
+import java.util.Iterator;
+
 public class MyLinkedListMinHeap<T extends Comparable<T>> implements MyMinHeapInterface<T> {
     private MyLinkedList<T> heap;
     private int index;
@@ -113,6 +115,7 @@ public class MyLinkedListMinHeap<T extends Comparable<T>> implements MyMinHeapIn
     @Override
     public void clear() {
         heap.clear();
+        size = 0;
     }
 
     @Override
@@ -156,5 +159,15 @@ public class MyLinkedListMinHeap<T extends Comparable<T>> implements MyMinHeapIn
             System.out.println();
             if (printedNodes == index) break;
         }
+    }
+
+    @Override
+    public int size() {
+        return size;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return heap.iterator();
     }
 }

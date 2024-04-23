@@ -1,6 +1,6 @@
 package org.example.utils.interfaces;
 
-public interface MyMinHeapInterface<T> {
+public interface MyMinHeapInterface<T> extends Iterable<T> {
     void insert(T item);
 
     void removeSmallest();
@@ -12,4 +12,6 @@ public interface MyMinHeapInterface<T> {
     void printArr();
 
     void printHeap();
+
+    int size();
 }

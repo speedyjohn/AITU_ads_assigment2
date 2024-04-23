@@ -229,7 +229,8 @@ public class MyArrayList<T> implements MyListInterface<T> {
 
     @Override
     public void clear() {
-        arr = (T[]) new Object[5];
+        arr = (T[]) new Object[7];
+        size = 0;
     }
 
     @Override

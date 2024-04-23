@@ -21,12 +21,14 @@ public class MyArrayListStack<T> implements MyStackInterface<T> {
     @Override
     public void push(T item) {
         myArrayList.add(item);
+        size++;
     }
 
     @Override
     public T pop() {
         T first = myArrayList.getFirst();
         myArrayList.removeFirst();
+        size--;
         return first;
     }
 
