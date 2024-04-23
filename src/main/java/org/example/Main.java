@@ -1,38 +1,47 @@
 package org.example;
 
 import org.example.utils.classes.*;
+import org.example.utils.sort.MergeSort;
 
 public class Main {
     public static void main(String[] args) {
-//        MyArrayList<Object> myArrayList = new MyArrayList<>();
-//        myArrayList.add(1);
-//        myArrayList.add(2);
-//        myArrayList.add(3);
-//        myArrayList.add(4);
-//        myArrayList.add(5);
-//        myArrayList.printArr();
-//        System.out.println();
-//        myArrayList.add(3, 123);
-//        myArrayList.printArr();
-//        System.out.println();
-//        myArrayList.set(5, 555);
-//        myArrayList.printArr();
-//        System.out.println();
-//        myArrayList.addFirst(111);
-//        myArrayList.printArr();
-//        System.out.println();
-//        myArrayList.addLast(666);
-//        myArrayList.printArr();
-//        System.out.println();
-//        myArrayList.remove(4);
-//        myArrayList.printArr();
-//        System.out.println();
-//        myArrayList.removeFirst();
-//        myArrayList.printArr();
-//        System.out.println();
-//        myArrayList.removeLast();
-//        System.out.println();
-//        // Place for sort checking
+        MyArrayList<Object> myArrayList = new MyArrayList<>();
+        myArrayList.add(1);
+        myArrayList.add(2);
+        myArrayList.add(3);
+        myArrayList.add(4);
+        myArrayList.add(5);
+        myArrayList.printArr();
+        System.out.println();
+        myArrayList.add(3, 123);
+        myArrayList.printArr();
+        System.out.println();
+        myArrayList.set(5, 555);
+        myArrayList.printArr();
+        System.out.println();
+        myArrayList.addFirst(111);
+        myArrayList.printArr();
+        System.out.println();
+        myArrayList.addLast(666);
+        myArrayList.printArr();
+        System.out.println();
+        myArrayList.remove(4);
+        myArrayList.printArr();
+        System.out.println();
+        myArrayList.removeFirst();
+        myArrayList.printArr();
+        System.out.println();
+        myArrayList.removeLast();
+        System.out.println();
+        myArrayList.add(32);
+        myArrayList.add(45);
+        myArrayList.add(15);
+        myArrayList.add(15);
+        myArrayList.add(5);
+        myArrayList.add(5);
+        myArrayList.add(7);
+        myArrayList.sort();
+        myArrayList.printArr();
 //        System.out.println(myArrayList.get(3));
 //        System.out.println(myArrayList.getFirst());
 //        System.out.println(myArrayList.getLast());
@@ -45,12 +54,12 @@ public class Main {
 //            System.out.println(num);
 //        }
 
-//        MyLinkedList<Object> myLinkedList = new MyLinkedList<>();
-//        myLinkedList.add(1);
-//        myLinkedList.add(2);
-//        myLinkedList.add(3);
-//        myLinkedList.add(4);
-//        myLinkedList.add(5);
+        MyLinkedList<Object> myLinkedList = new MyLinkedList<>();
+        myLinkedList.add(123);
+        myLinkedList.add(23);
+        myLinkedList.add(3);
+        myLinkedList.add(43);
+        myLinkedList.add(41);
 //        myLinkedList.add(2, 101);
 //        myLinkedList.printArr();
 //        myLinkedList.addFirst(111);
@@ -76,6 +85,8 @@ public class Main {
 //        System.out.println(myLinkedList.size());
 //        myLinkedList.clear();
 //        System.out.println(myLinkedList.size());
+        myLinkedList.sort();
+        myLinkedList.printArr();
 
 //        MyQueue<Object> myQueue = new MyQueue<>();
 //        myQueue.enqueue(1);
@@ -123,27 +134,26 @@ public class Main {
 //        myStack.clear();
 //        System.out.println(myStack.size());
 
-        MyMinHeap<Integer> myMinHeap = new MyMinHeap<>();
-        myMinHeap.insert(1);
-        myMinHeap.insert(2);
-        myMinHeap.insert(3);
-        myMinHeap.insert(4);
-        myMinHeap.insert(5);
-        myMinHeap.insert(6);
-        myMinHeap.insert(7);
-        myMinHeap.printHeap();
-        myMinHeap.printArr();
-        System.out.println(myMinHeap.getSmallest());
-        myMinHeap.removeSmallest();
-        myMinHeap.printHeap();
-        myMinHeap.printArr();
-        Object[] myHeapArray = myMinHeap.toArray();
-        for (Object item: myHeapArray) {
-            System.out.print(item + " ");
-        }
-        myMinHeap.clear();
-        System.out.println();
-        myMinHeap.printArr();
-
+//        MyMinHeap<Integer> myMinHeap = new MyMinHeap<>();
+//        myMinHeap.insert(1);
+//        myMinHeap.insert(2);
+//        myMinHeap.insert(3);
+//        myMinHeap.insert(4);
+//        myMinHeap.insert(5);
+//        myMinHeap.insert(6);
+//        myMinHeap.insert(7);
+//        myMinHeap.printHeap();
+//        myMinHeap.printArr();
+//        System.out.println(myMinHeap.getSmallest());
+//        myMinHeap.removeSmallest();
+//        myMinHeap.printHeap();
+//        myMinHeap.printArr();
+//        Object[] myHeapArray = myMinHeap.toArray();
+//        for (Object item: myHeapArray) {
+//            System.out.print(item + " ");
+//        }
+//        myMinHeap.clear();
+//        System.out.println();
+//        myMinHeap.printArr();
     }
 }

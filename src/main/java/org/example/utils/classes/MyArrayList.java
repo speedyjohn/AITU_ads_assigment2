@@ -3,6 +3,8 @@ package org.example.utils.classes;
 import org.example.utils.exceptions.ArrayEmptyException;
 import org.example.utils.exceptions.ArrayIndexOutOfBoundsException;
 import org.example.utils.interfaces.MyListInterface;
+import org.example.utils.sort.MergeSort;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -47,6 +49,7 @@ public class MyArrayList<T> implements MyListInterface<T> {
         for (int i = 0; i < size; i++) {
             System.out.print(arr[i] + " ");
         }
+        System.out.println();
     }
 
 
@@ -133,7 +136,35 @@ public class MyArrayList<T> implements MyListInterface<T> {
 
     @Override
     public void sort() {
+        // Найдем количество не-null элементов в массиве
+        int notNullCount = 0;
+        for (int i = 0; i < size; i++) {
+            if (arr[i] != null) {
+                notNullCount++;
+            }
+        }
 
+        // Создаем новый массив для не-null элементов
+        T[] notNullArray = (T[]) new Object[notNullCount];
+
+        // Заполняем новый массив не-null элементами
+        int index = 0;
+        for (int i = 0; i < size; i++) {
+            if (arr[i] != null) {
+                notNullArray[index++] = arr[i];
+            }
+        }
+
+        // Сортируем не-null элементы
+        MergeSort.sort(notNullArray, 0, notNullCount - 1);
+
+        // Обратно копируем отсортированные не-null элементы в оригинальный массив
+        index = 0;
+        for (int i = 0; i < size; i++) {
+            if (arr[i] != null) {
+                arr[i] = notNullArray[index++];
+            }
+        }
     }
 
     @Override

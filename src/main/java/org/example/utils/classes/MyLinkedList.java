@@ -4,6 +4,7 @@ import org.example.utils.exceptions.ArrayEmptyException;
 import org.example.utils.exceptions.ArrayIndexOutOfBoundsException;
 import org.example.utils.exceptions.NoSuchElementException;
 import org.example.utils.interfaces.MyListInterface;
+import org.example.utils.sort.MergeSort;
 
 import java.util.Iterator;
 
@@ -28,6 +29,11 @@ public class MyLinkedList<T> implements MyListInterface<T> {
         if (size == 0) {
             throw new ArrayEmptyException("ArrayList is empty.");
         }
+    }
+
+    private void arrayToLinkedList(Object[] arr){
+        clear();
+        for(Object a : arr) add((T) a);
     }
 
     private MyNode<T> getNode(int index) {
@@ -155,7 +161,7 @@ public class MyLinkedList<T> implements MyListInterface<T> {
 
     @Override
     public void sort() {
-
+        arrayToLinkedList(MergeSort.sort(toArray(), 0, size - 1));
     }
 
     @Override
