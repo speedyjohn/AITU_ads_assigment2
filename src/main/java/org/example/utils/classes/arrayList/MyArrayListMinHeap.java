@@ -1,14 +1,14 @@
-package org.example.utils.classes;
+package org.example.utils.classes.arrayList;
 
 import org.example.utils.exceptions.ArrayEmptyException;
 import org.example.utils.interfaces.MyMinHeapInterface;
 
-public class MyMinHeap<T extends Comparable<T>> implements MyMinHeapInterface<T> {
+public class MyArrayListMinHeap<T extends Comparable<T>> implements MyMinHeapInterface<T> {
     private MyArrayList<T> heap;
     private int index;
     private int size;
 
-    public MyMinHeap() {
+    public MyArrayListMinHeap() {
         heap = new MyArrayList<>(7);
         size = 7;
         index = 0;
@@ -26,7 +26,7 @@ public class MyMinHeap<T extends Comparable<T>> implements MyMinHeapInterface<T>
         }
     }
 
-    public MyMinHeap(int size) {
+    public MyArrayListMinHeap(int size) {
         heap = new MyArrayList<>(size);
         this.size = size;
         index = 0;

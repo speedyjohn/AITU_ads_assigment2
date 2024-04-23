@@ -1,7 +1,7 @@
 package org.example;
 
-import org.example.utils.classes.*;
-import org.example.utils.sort.MergeSort;
+import org.example.utils.classes.arrayList.MyArrayList;
+import org.example.utils.classes.linkedList.MyLinkedList;
 
 public class Main {
     public static void main(String[] args) {

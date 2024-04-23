@@ -1,4 +1,4 @@
-package org.example.utils.classes;
+package org.example.utils.classes.linkedList;
 
 import org.example.utils.exceptions.ArrayEmptyException;
 import org.example.utils.exceptions.ArrayIndexOutOfBoundsException;

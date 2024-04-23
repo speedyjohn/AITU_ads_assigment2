@@ -1,15 +1,15 @@
-package org.example.utils.classes;
+package org.example.utils.classes.linkedList;
 
 import org.example.utils.exceptions.ArrayEmptyException;
 import org.example.utils.interfaces.MyStackInterface;
 
 import java.util.Iterator;
 
-public class MyStack<T> implements MyStackInterface<T> {
+public class MyLinkedListStack<T> implements MyStackInterface<T> {
     private MyLinkedList<T> myLinkedList;
     private int size;
 
-    public MyStack() {
+    public MyLinkedListStack() {
         myLinkedList = new MyLinkedList<T>();
         size = 0;
     }

@@ -1,4 +1,4 @@
-package org.example.utils.classes;
+package org.example.utils.classes.linkedList;
 
 public class MyNode<T> {
         T data;

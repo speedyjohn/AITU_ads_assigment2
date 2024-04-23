@@ -1,16 +1,16 @@
-package org.example.utils.classes;
+package org.example.utils.classes.linkedList;
 
 import org.example.utils.exceptions.ArrayEmptyException;
 import org.example.utils.interfaces.MyQueueInterface;
 
 import java.util.Iterator;
 
-public class MyQueue<T> implements MyQueueInterface<T> {
+public class MyLinkedListQueue<T> implements MyQueueInterface<T> {
 
     private MyLinkedList<T> myLinkedList;
     private int size;
 
-    public MyQueue() {
+    public MyLinkedListQueue() {
         myLinkedList = new MyLinkedList<T>();
         size = 0;
     }
